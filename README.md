@@ -10,7 +10,7 @@ This browser based web application to ...
 
 * Hi, my name is Jihoon. I'm excited about this project because I want to learn how to work with others on making a program.
   Hi, my name is Shuyi. I'm excited about this project because coding is fun.
-
+  Hi, my name is Justin. I'm excited about this project because I want to learn how to code.
 ## Technologies
 
 Technologies used for this project:
