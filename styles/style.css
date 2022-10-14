@@ -1,1 +1,9 @@
+.navbar-brand {
+    display: flex;
+    position: absolute;
+}
 
+.d-flex {
+    style: 80%;
+    position: center;
+}
