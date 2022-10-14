@@ -2,3 +2,17 @@
     display: flex;
     position: absolute;
 }
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+    .navbar-brand {
+        width: 15%;
+        float: none;
+    }
+
+}
