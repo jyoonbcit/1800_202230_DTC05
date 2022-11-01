@@ -1,6 +1,11 @@
-.navbar-brand {
-    display: flex;
-    position: absolute;
+#logo {
+    display: inline-flex;
+    float: left;
+    width: auto;
+}
+
+#search-bar {
+    display: show;
 }
 
 .card {
@@ -11,10 +16,23 @@
     padding: 20px;
 }
 
-@media only screen and (max-width: 400px) {
-    .navbar-brand {
-        width: 15%;
-        float: none;
+/* from mt project */
+
+/* small */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* medium */
+@media screen and (max-width: 900px) {
+    #logo {
+        display: none;
     }
 
     .card {
