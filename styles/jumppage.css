@@ -6,6 +6,11 @@
 
 .container {
     margin: auto;
+    padding: auto;
+}
+
+.border-top {
+    margin-top: 50px;
 }
 
 /* small */
