@@ -4,10 +4,6 @@
     width: auto;
 }
 
-#search-bar {
-    display: show;
-}
-
 .card {
     width: 50%;
     margin: 5px auto;
@@ -15,8 +11,6 @@
     margin-bottom: 50px;
     padding: 20px;
 }
-
-/* from mt project */
 
 /* small */
 @media screen and (max-width: 600px) {
