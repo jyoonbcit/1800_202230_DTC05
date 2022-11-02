@@ -4,14 +4,6 @@
     width: auto;
 }
 
-.card {
-    width: 50%;
-    margin: 5px auto;
-    float: none;
-    margin-bottom: 50px;
-    padding: 20px;
-}
-
 /* small */
 @media screen and (max-width: 600px) {
     body {
