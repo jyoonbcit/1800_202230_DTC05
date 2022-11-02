@@ -4,6 +4,14 @@
     width: auto;
 }
 
+#backContainer>p {
+    display: inline;
+}
+
+#backBtn {
+    display: inline;
+}
+
 /* small */
 @media screen and (max-width: 600px) {
     body {
