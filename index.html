@@ -20,9 +20,20 @@
 
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
+
+    <style>
+        .card {
+            width: 50%;
+            margin: 5px auto;
+            float: none;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,11 +60,12 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <a href="login.html"> <button id="loginBtn" style="margin-left: 20px;">Login/Signup</button> </a>
             </div>
         </div>
     </nav>
 
-    <!--Cards for body-->
+    <!--Welcome banner-->
     <div class="jumbotron jumbotron-fluid bg-info">
         <div class="container">
             <h1 class="display-4 text-center" style="font-family: cursive; padding-top: 2%;">Welcome to co.Cost</h1>
@@ -61,6 +73,7 @@
         </div>
     </div>
 
+    <!--Cards for body-->
     <div class="card">
         <a href="" style="text-decoration:none;">
             <img src="images/BCIT.jpeg" class="card-img-top" alt="...">
@@ -111,7 +124,7 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/script.js"></script>
 
 </body>
 
