@@ -9,6 +9,14 @@
     padding: auto;
 }
 
+#backContainer>p {
+    display: inline;
+}
+
+#backBtn {
+    display: inline;
+}
+
 .border-top {
     margin-top: 50px;
 }
