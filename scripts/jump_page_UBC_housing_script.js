@@ -16,3 +16,20 @@ var firebaseConfig = {
 //--------------------------------------------
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+
+// initialize housing database for UBC Vancouver
+
+function load() {
+    db.collection("UBC Vancouver Housing").get().then((querySnapshot) => {
+        i = 1;
+        querySnapshot.forEach((doc) => {
+            $(`#image_${i}`).html(`<img src=images/UBCV_housing_${i}.jpg'>`);
+            document.getElementById(`image_${i}`).src = `./images/UBCV_housing_${i}.jpg`;
+            $(`#name_${i}`).html(doc.data().name);
+            $(`#description_${i}`).html(doc.data().description);
+            i++;
+        });
+    });
+}
+
+$(document).ready(load);
