@@ -45,7 +45,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-warning py-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
-                <img id="logo" src="../images/Cocost_logo.png" height="125">
+                <img id="logo" src="./images/Cocost_logo.png" height="125">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -67,7 +67,33 @@
 
     <main role="main">
 
-        <section class="jumbotron text-center">
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div class="container">
+                <div id="UBC Vancouver Housing-go-here" class="row row-cols-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates for general use, not displayed -->
+        <template id="housingCardTemplate">
+            <div class="card py-2 mx-2" style="width: 18rem;">
+                <img class="card-image card-img-top" src=" ..." alt="..." height="50%">
+                <div class="card-body">
+                    <h5 class="card-name">Card title</h5>
+                    <p class="card-description">Some quick example text to build on the card title and make up the bulk
+                        of
+                        the
+                        card's content.</p>
+                    <p class="card-price">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <p class="card-type">House</p>
+                    <a class="btn btn-primary card-href">Get Details</a>
+                </div>
+            </div>
+        </template>
+
+        <!-- <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Housing</h1>
                 <p class="lead text-muted"> Housing information around UBC Vancouver </p>
@@ -229,7 +255,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <section class="jumbotron text-center">
             <div class="container">
