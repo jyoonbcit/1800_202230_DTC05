@@ -5,25 +5,38 @@
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
+    <!------------------------>
     <!-- Required meta tags -->
+    <!------------------------>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap Library CSS CDN go here -->
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
 
-    <!-- Other libraries go here -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-- Link to styles of your own -->
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="./styles/style.css">
+
 </head>
+
 
 <body>
 
@@ -60,7 +73,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Restaurant</h1>
-                <p class="lead text-muted">Find out restaurant information around ___</p>
+                <p class="lead text-muted">Find out restaurant information around SFU</p>
                 <nav aria-label="...">
                     <ul class="pagination">
                         <li class="page-item disabled">
@@ -79,138 +92,29 @@
             </div>
         </section>
 
-        <div class="album py-5 bg-light">
+        <div class="container">
+            <!-- Here is container for cards  -->
             <div class="container">
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_1"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_1">Restaurant hours</p>
-                                <p id="location_1">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_2"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_2">hours</p>
-                                <p id="location_2">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_3"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_3">hours</p>
-                                <p id="location_3">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_4"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_4">hours</p>
-                                <p id="location_4">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_5"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_5">hours</p>
-                                <p id="location_5">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_6"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_6">hours</p>
-                                <p id="location_6">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_7"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_7">hours</p>
-                                <p id="location_7">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_8"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_8">hours</p>
-                                <p id="location_8">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img id="image_9"
-                                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p id="hours_9">hours</p>
-                                <p id="location_9">Restaurant location</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="SFU restaurants-go-here" class="row row-cols-auto">
                 </div>
             </div>
         </div>
+
+        <!-- Templates for general use, not displayed -->
+        <template id="restaurantsCardTemplate">
+            <div class="card py-2 mx-2" style="width: 18rem;">
+                <img class="card-image card-img-top" src=" ..." alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-location">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                    <p class="card-hours">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a class="btn btn-primary card-href">Get Details</a>
+                </div>
+            </div>
+        </template>
 
         <section class="jumbotron text-center">
             <div class="container">
@@ -243,7 +147,11 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <script src="../scripts/SFU_restaurants.js"></script>
+    <script src="../scripts/SFU restaurants.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
 
 </body>
 
