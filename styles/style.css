@@ -12,6 +12,11 @@
     display: inline;
 }
 
+.py-3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 /* small */
 @media screen and (max-width: 600px) {
     body {
