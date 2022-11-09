@@ -7,7 +7,7 @@ var firebaseConfig = {
     projectId: "bcit-dtc05-project",
     storageBucket: "bcit-dtc05-project.appspot.com",
     messagingSenderId: "494917892160",
-    appId: "1:494917892160:web:ed4c9a297a09fe15179eb5"
+    appId: "1:494917892160:web:4a4972c9f10060c8c587a5"
 };
 
 //--------------------------------------------
