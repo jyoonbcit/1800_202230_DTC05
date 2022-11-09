@@ -17,7 +17,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
+    <!-- FireBase-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -67,7 +72,8 @@
     <!--Welcome banner-->
     <div class="jumbotron jumbotron-fluid bg-info">
         <div class="container">
-            <h1 class="display-4 text-center" style="font-family: cursive; padding-top: 2%;">Welcome to co.Cost</h1>
+            <h1 class="display-4 text-center" style="font-family: cursive; padding-top: 2%;">Welcome to co.Cost <span
+                    id="name-goes-here"></span></h1>
             <p class="lead text-center">Convenience at the lowest cost.</p>
         </div>
     </div>
@@ -123,8 +129,9 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
+    <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/script.js"></script>
-
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
