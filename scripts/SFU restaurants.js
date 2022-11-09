@@ -26,9 +26,9 @@ function displayCards(collection) {
             //var i = 1;  //if you want to use commented out section
             snap.forEach(doc => { //iterate thru each doc
                 var title = doc.data().name;        // get value of the "name" key
-                var location = doc.data().location;   // get value of the "details" key
-                var hours = doc.data().hours;
-                var restaurantID = doc.data().code;
+                var location = doc.data().location;   // get value of the "location" key
+                var hours = doc.data().hours;       // get value of the "hours" key
+                var restaurantID = doc.data().code;     // get value of the "code" key
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
