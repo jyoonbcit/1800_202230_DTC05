@@ -49,4 +49,4 @@ function displayCards(collection) {
         })
 }
 
-displayCards("Stops");
+displayCards("UBC 14 Stop");
