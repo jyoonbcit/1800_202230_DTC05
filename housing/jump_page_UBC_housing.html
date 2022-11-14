@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
@@ -44,8 +44,8 @@
     <!-- Search bar and logo -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-                <img id="logo" src="./images/Cocost_logo.png" height="125">
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../images/Cocost_logo.png" height="125">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,14 +60,17 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <a href="login.html"> <button id="loginBtn" style="margin-left: 20px;">Login/Signup</button> </a>
+                <a href="../login.html"> <button id="loginBtn" style="margin-left: 20px;">Login/Signup</button> </a>
             </div>
         </div>
     </nav>
-    <div id="backContainer" onclick="history.back()">
-        <img id="backBtn" src="./images/backarrow.png">
+    <div id="backContainer" onclick="history.back()" style="float: left">
+        <img id="backBtn" src="../images/backarrow.png">
         <p>Go back</p>
     </div>
+    <a href="UBC-housing-submission.html">
+        <button id="addSubmission" style="float: right">Create your own listing</button>
+    </a>
 
     <main role="main">
 
@@ -292,7 +295,7 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <script src="./scripts/jump_page_UBC_housing_script.js"></script>
+    <script src="./jump_page_UBC_housing_script.js"></script>
 
 </body>
 

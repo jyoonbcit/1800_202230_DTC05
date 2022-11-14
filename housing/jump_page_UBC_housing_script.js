@@ -49,7 +49,7 @@ function displayCards(collection) {
             newCard.querySelector('.card-description').innerHTML = description;
             newCard.querySelector('.card-price').innerHTML = price;
             newCard.querySelector('.card-type').innerHTML = type;
-            newCard.querySelector('.card-image').src = `./images/${name}.jpg`;
+            newCard.querySelector('.card-image').src = `../images/${name}.jpg`;
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(newCard);
