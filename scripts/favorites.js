@@ -1,3 +1,18 @@
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // User is signed in.
+        db.collection("users").doc(user.uid).get().then(snap => {
+            alert(snap.data().name);
+            let posts = doc.data().posts;   //get array of posts
+            posts.forEach(post => {         //iterate thru this array
+                console.log(post);
+            }
+    }
+  } else {
+        // No user is signed in.
+    }
+});
+
 function createSomeLots() {
     for (var i = 1; i < 5; i++) {
         db.collection("lots").doc("lot" + i).set({

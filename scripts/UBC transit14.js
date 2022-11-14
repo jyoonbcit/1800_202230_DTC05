@@ -36,7 +36,8 @@ function displayCards(collection) {
                 newcard.querySelector('.card-LocationName').innerHTML = LocationName;
                 newcard.querySelector('.card-stop').innerHTML = stop;
                 newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
-
+                newcard.querySelector('.favourite').setAttribute("id", doc.id);
+                newcard.querySelector('.favourite').setAttribute("onclick", "savefave(doc.id)");
                 //give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -50,3 +51,16 @@ function displayCards(collection) {
 }
 
 displayCards("UBC 14 Stop");
+
+function savefave(postid) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            db.collection("users").doc(user.uid).update({
+                faves: arrayUnion("favourites")
+            })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
