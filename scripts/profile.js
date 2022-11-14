@@ -44,7 +44,8 @@ function editUserInfo() {
 function saveUserInfo() {
     userName = document.getElementById('nameInput').value;
     userSchool = document.getElementById('schoolInput').value;
-    userCity = document.getElementById('cityInput').value;
+    userEmail = document.getElementById('emailInput').value;
+    userNickname = document.getElementById('nicknameInput').value;
 
     currentUser.update({
         name: userName,
