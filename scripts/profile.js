@@ -55,3 +55,4 @@ function saveUserInfo() {
             console.log("Document successfully updated!");
         })
     document.getElementById('personalInfoFields').disabled = true;
+}
