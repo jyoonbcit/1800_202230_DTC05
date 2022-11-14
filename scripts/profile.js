@@ -13,8 +13,8 @@ function populateInfo() {
                     //get the data fields of the user
                     let userName = userDoc.data().name;
                     let userSchool = userDoc.data().school;
-                    let userCity = userDoc.data().city;
-
+                    let userEmail = userDoc.data().email;
+                    let userNickname = userDoc.data().nickname;
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
@@ -22,8 +22,11 @@ function populateInfo() {
                     if (userSchool != null) {
                         document.getElementById("schoolInput").value = userSchool;
                     }
-                    if (userCity != null) {
-                        document.getElementById("cityInput").value = userCity;
+                    if (userEmail != null) {
+                        document.getElementById("emailInput").value = userEmail;
+                    }
+                    if (userNickname != null) {
+                        document.getElementById("nicknameInput").value = userNickname;
                     }
                 })
         } else {
@@ -50,7 +53,8 @@ function saveUserInfo() {
     currentUser.update({
         name: userName,
         school: userSchool,
-        city: userCity
+        city: userCity,
+        nickname: userNickname
     })
         .then(() => {
             console.log("Document successfully updated!");
