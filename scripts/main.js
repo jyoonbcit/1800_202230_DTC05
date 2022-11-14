@@ -18,3 +18,8 @@ function insertName() {
     });
 }
 insertName(); //run the function
+
+
+function setUserData(id) {
+    localStorage.setItem('users.uid', id);
+}
