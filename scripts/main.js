@@ -19,6 +19,7 @@ function insertName() {
         } else {
             // No user is signed in.
             console.log("No user is signed in");
+            $("#logoutBtn").hide();
         }
     });
 }
@@ -27,3 +28,13 @@ insertName(); //run the function
 function setSFURestaurantData(id) {
     localStorage.setItem('SFU_restaurantID', id);
 }
+
+$("logoutBtn").click(function () {
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+        console.log("User signed out");
+    }).catch(function (error) {
+        // An error happened.
+        console.log("Error signing out");
+    });
+});
