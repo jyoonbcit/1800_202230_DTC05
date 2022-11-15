@@ -50,3 +50,7 @@ function displayCards(collection) {
 }
 
 displayCards("SFU restaurants");
+
+function setSFURestaurantData(id) {
+    localStorage.setItem('SFU_restaurantID', id);
+}

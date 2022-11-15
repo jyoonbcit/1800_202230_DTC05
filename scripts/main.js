@@ -19,6 +19,10 @@ function insertName() {
 }
 insertName(); //run the function
 
+function setSFURestaurantData(id) {
+    localStorage.setItem('SFU_restaurantID', id);
+}
+
 
 function setUserData(id) {
     localStorage.setItem('users.uid', id);

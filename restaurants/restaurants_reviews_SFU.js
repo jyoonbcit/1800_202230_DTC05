@@ -1,4 +1,4 @@
-let hikeID = localStorage.getItem("hikeID");
+let restaurantID = localStorage.getItem("SFU_restaurantID");
 
 db.collection("SFU restaurants").where("code", "==", restaurantID)
     .get()
@@ -6,12 +6,9 @@ db.collection("SFU restaurants").where("code", "==", restaurantID)
         //see how many results you have got from the query
         size = queryRestaurant.size;
         // get the documents of query
-        Restaurants = queryRestaurant.docs;
-
-        // We want to have one document per hike, so if the the result of 
-        //the query is more than one, we can check it right now and clean the DB if needed.
+        SFU_restaurants = queryRestaurant.docs;
         if (size = 1) {
-            var thisRestaurant = Restaurants[0].data();
+            var thisRestaurant = SFU_restaurants[0].data();
             name = thisRestaurant.name;
             document.getElementById("RestaurantName").innerHTML = name;
         } else {
