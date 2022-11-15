@@ -5,6 +5,7 @@ db.collection("SFU restaurants").where("code", "==", restaurantID)
     .then(queryRestaurant => {
         //see how many results you have got from the query
         size = queryRestaurant.size;
+        console.log(size);
         // get the documents of query
         SFU_restaurants = queryRestaurant.docs;
         if (size = 1) {
