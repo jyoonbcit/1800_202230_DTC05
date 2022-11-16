@@ -25,10 +25,6 @@ function insertName() {
 }
 insertName(); //run the function
 
-function setSFURestaurantData(id) {
-    localStorage.setItem('SFU_restaurantID', id);
-}
-
 $("logoutBtn").click(function () {
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
