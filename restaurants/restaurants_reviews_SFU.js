@@ -12,6 +12,7 @@ db.collection("SFU restaurants").where("code", "==", restaurantID)
             var thisRestaurant = SFU_restaurants[0].data();
             name = thisRestaurant.name;
             document.getElementById("RestaurantName").innerHTML = name;
+            console.log("size =1")
         } else {
             console.log("Query has more than one data")
         }
@@ -21,7 +22,7 @@ db.collection("SFU restaurants").where("code", "==", restaurantID)
     });
 
 function writeReview() {
-    console.log("in")
+    console.log("Inside Review")
     let Title = document.getElementById("title").value;
     let Rating = document.getElementById("rating").value;
     let Description = document.getElementById("description").value;
@@ -43,7 +44,7 @@ function writeReview() {
                         description: Description,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        window.location.href = "thanks.html"; //new line added
+                        window.location.href = "./thanks.html"; //new line added
                     })
                 })
 

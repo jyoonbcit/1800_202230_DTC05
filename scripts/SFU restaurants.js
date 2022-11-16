@@ -28,14 +28,15 @@ function displayCards(collection) {
                 var title = doc.data().name;        // get value of the "name" key
                 var location = doc.data().location;   // get value of the "location" key
                 var hours = doc.data().hours;       // get value of the "hours" key
-                var restaurantID = doc.data().code;     // get value of the "code" key
+                var SFU_restaurantID = doc.data().code;     // get value of the "code" key
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-location').innerHTML = location;
                 newcard.querySelector('.card-hours').innerHTML = hours;
-                newcard.querySelector('.card-image').src = `../images/${restaurantID}.jpeg`; //Example: NV01.jpg
+                newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
+                newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: NV01.jpg
 
                 //give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
