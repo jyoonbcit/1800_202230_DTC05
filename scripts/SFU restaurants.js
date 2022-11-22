@@ -37,13 +37,15 @@ function displayCards(collection) {
                 newcard.querySelector('.card-hours').innerHTML = hours;
                 newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
                 newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: NV01.jpg
-
-                //give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-                //attach to gallery
+                newcard.querySelector('i').id = 'save-' + SFU_restaurantID;  //know which restaurant to bookmark based on which restaurant was clicked
+                newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document 
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(SFU_restaurantID)) {
+                        document.getElementById('save-' + SFU_restaurantID).innerText = 'favorite';
+                    }
+                })
                 document.getElementById(collection + "-go-here").appendChild(newcard);
                 //i++;   //if you want to use commented out section
             })
@@ -56,15 +58,16 @@ function setSFURestaurantData(id) {
     localStorage.setItem('SFU_restaurantID', id);
 }
 
-
+var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
+        currentUser = db.collection("users").doc(user.uid)
         var email = user.email;
         console.log(email, "is signed in");
+        console.log(currentUser);
         $("#loginBtn").hide();
-        // ...
     } else {
         console.log("No user is signed in");
         $("#logoutBtn").hide();
@@ -82,3 +85,16 @@ $("logoutBtn").click(function () {
         console.log("Error signing out");
     });
 });
+
+function saveBookmark(SFU_restaurantID) {
+    currentUser.set({
+        bookmarks: firebase.firestore.FieldValue.arrayUnion(SFU_restaurantID)
+    }, {
+        merge: true
+    })
+        .then(function () {
+            console.log("bookmark has been saved for: " + currentUser);
+            var iconID = 'save-' + SFU_restaurantID;
+            document.getElementById(iconID).innerText = 'favorite';
+        });
+}
