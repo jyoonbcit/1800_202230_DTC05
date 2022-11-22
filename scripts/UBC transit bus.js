@@ -36,7 +36,7 @@ function displayCards(collection) {
                 newcard.querySelector('.card-RouteHour').innerHTML = RouteHour;
                 newcard.querySelector('.card-stop').innerHTML = stop;
                 newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
-
+                newcard.querySelector('.detailbtn').setAttribute('href', `../html/ubc_transit_details.html?${transitID}`)
                 //give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -76,3 +76,4 @@ $("logoutBtn").click(function () {
         console.log("Error signing out");
     });
 });
+

@@ -30,13 +30,12 @@ function displayCards(collection) {
                 var stop = doc.data().StopIDs;
                 var transitID = doc.data().Code;
                 let newcard = cardTemplate.content.cloneNode(true);
-
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-RouteHour').innerHTML = RouteHour;
                 newcard.querySelector('.card-stop').innerHTML = stop;
                 newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
-
+                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID;
                 //give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -49,6 +48,30 @@ function displayCards(collection) {
         })
 }
 
+// function populateCardsDynamically() {
+//     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
+//     let hikeCardGroup = document.getElementById("hikeCardGroup");
+
+//     db.collection("hikes").orderBy("length").limit(2).get()
+//         .then(allHikes => {
+//             allHikes.forEach(doc => {
+//                 var hikeName = doc.data().name; //gets the name field
+//                 var hikeID = doc.data().code; //gets the unique ID field
+//                 var hikeLength = doc.data().length; //gets the length field
+//                 let testHikeCard = hikeCardTemplate.content.cloneNode(true);
+//                 testHikeCard.querySelector('.card-title').innerHTML = hikeName;     //equiv getElementByClassName
+//                 testHikeCard.querySelector('.card-length').innerHTML = hikeLength;  //equiv getElementByClassName
+//                 testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);//equiv getElementByTagName
+//                 testHikeCard.querySelector('i').id = 'save-' + hikeID; // assign specific ID to the card that was clicked
+//                 testHikeCard.querySelector('i').onclick = () => saveBookmark(hikeID); // call a function to save the hikes to the users doc
+
+//                 testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;   //equiv getElementByTagName
+//                 testHikeCard.querySelector('.read-more').href = "eachHike.html?hikeName=" + hikeName + "&id=" + hikeID;
+//                 hikeCardGroup.appendChild(testHikeCard);
+//             })
+
+//         })
+// }
 displayCards("Buses");
 
 firebase.auth().onAuthStateChanged((user) => {
