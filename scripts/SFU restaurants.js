@@ -21,7 +21,8 @@ const db = firebase.firestore();
 function displayCards(collection) {
     let cardTemplate = document.getElementById("restaurantsCardTemplate");
 
-    db.collection(collection).get()
+    db.collection(collection)
+        .get()
         .then(snap => {
             //var i = 1;  //if you want to use commented out section
             snap.forEach(doc => { //iterate thru each doc
