@@ -21,6 +21,10 @@
     float: right;
 }
 
+.material-icons {
+    cursor: pointer;
+}
+
 /* small */
 @media screen and (max-width: 600px) {
     body {
