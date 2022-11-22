@@ -17,6 +17,10 @@
     padding-bottom: 0px;
 }
 
+.material-icons {
+    float: right;
+}
+
 /* small */
 @media screen and (max-width: 600px) {
     body {
