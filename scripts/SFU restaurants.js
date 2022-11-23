@@ -42,8 +42,8 @@ function displayCards(collection) {
                 newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document 
                 currentUser.get().then(userDoc => {
                     //get the user name
-                    var bookmarks = userDoc.data().bookmarks;
-                    if (bookmarks.includes(SFU_restaurantID)) {
+                    var restaurant_bookmarks = userDoc.data().restaurant_bookmarks;
+                    if (restaurant_bookmarks.includes(SFU_restaurantID)) {
                         document.getElementById('save-' + SFU_restaurantID).innerText = 'favorite';
                     }
                 })
@@ -89,7 +89,7 @@ $("logoutBtn").click(function () {
 
 function saveBookmark(SFU_restaurantID) {
     currentUser.set({
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(SFU_restaurantID)
+        restaurant_bookmarks: firebase.firestore.FieldValue.arrayUnion(SFU_restaurantID)
     }, {
         merge: true
     })

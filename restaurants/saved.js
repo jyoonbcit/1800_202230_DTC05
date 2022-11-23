@@ -40,11 +40,11 @@ function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             console.log(userDoc.data().name)
-            var bookmarks = userDoc.data().bookmarks;
-            console.log(bookmarks);
+            var restaurant_bookmarks = userDoc.data().restaurant_bookmarks;
+            console.log(restaurant_bookmarks);
 
             let cardTemplate = document.getElementById("CardTemplate");
-            bookmarks.forEach(thisResutaurantID => {
+            restaurant_bookmarks.forEach(thisResutaurantID => {
                 console.log(thisResutaurantID);
                 db.collection("SFU restaurants").where("code", "==", thisResutaurantID).get().then(snap => {
                     size = snap.size;
