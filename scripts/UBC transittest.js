@@ -1,35 +1,4 @@
 
-function displayCards(collection) {
-    let cardTemplate = document.getElementById("transitCardTemplate");
-
-    db.collection(collection).get()
-        .then(snap => {
-            //var i = 1;  //if you want to use commented out section
-            snap.forEach(doc => { //iterate thru each doc
-                var title = doc.data().BusID;        // get value of the "BusIDs" key
-                var RouteHour = doc.data().RouteHour;   // get value of the "RouteHour" key
-                var stop = doc.data().StopIDs;
-                var transitID = doc.data().Code;
-                let newcard = cardTemplate.content.cloneNode(true);
-                //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-RouteHour').innerHTML = RouteHour;
-                newcard.querySelector('.card-stop').innerHTML = stop;
-                newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
-                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID;
-                //give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-                //attach to gallery
-                document.getElementById(collection + "-go-here").appendChild(newcard);
-                //i++;   //if you want to use commented out section
-            })
-        })
-}
-displayCards("Buses");
-
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
@@ -37,6 +6,7 @@ firebase.auth().onAuthStateChanged((user) => {
         var email = user.email;
         console.log(email, "is signed in");
         $("#loginBtn").hide();
+        displayCards("Buses")
         // ...
     } else {
         console.log("No user is signed in");
@@ -45,6 +15,31 @@ firebase.auth().onAuthStateChanged((user) => {
         // ...
     }
 });
+
+
+function displayCards(collection) {
+    let cardTemplate = document.getElementById("transitCardTemplate");
+
+    db.collection(collection).get()
+        .then(snap => {
+            snap.forEach(doc => { //iterate thru each doc
+                var title = doc.data().BusID;        // get value of the "BusIDs" key
+                var RouteHour = doc.data().RouteHour;   // get value of the "RouteHour" key
+                var stop = doc.data().StopIDs; // get value of the "StopIDs" key
+                var transitID = doc.data().Code; // get value of the "Code" key
+                let newcard = cardTemplate.content.cloneNode(true);
+                //update title and text and image
+                newcard.querySelector('.card-title').innerHTML = title;
+                newcard.querySelector('.card-RouteHour').innerHTML = RouteHour;
+                newcard.querySelector('.card-stop').innerHTML = stop;
+                newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
+                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID;
+                //give unique ids to all elements for future use
+                document.getElementById(collection + "-go-here").appendChild(newcard); // populate card with data
+            })
+        })
+}
+
 
 $("logoutBtn").click(function () {
     firebase.auth().signOut().then(function () {

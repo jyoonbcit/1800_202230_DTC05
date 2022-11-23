@@ -26,17 +26,16 @@ function displayCards() {
     let params = new URL(window.location.href);
     let transitCode = params.searchParams.get("id");
     let transitTitle = params.searchParams.get("title");
-    db.collection("Stops").where("Code", "==", transitCode).get()
+    db.collection("Stops").where("Code", "==", transitCode).get() // in Stops collection grab all docuuments where Code is equal to transitCode
         .then(allStops => {
             stops = allStops.docs;
             console.log(stops)
-            //var i = 1;  //if you want to use commented out section
             stops.forEach(doc => { //iterate thru each doc
                 var title = doc.data().BusIDs;        // get value of the "BusIDs" key
                 var LocationName = doc.data().LocationName;   // get value of the "LocationName" key
-                var stop = doc.data().StopID;
-                var transitID = doc.data().Code;
-                var imageID = doc.data().ImageCode; // unique id
+                var stop = doc.data().StopID; // get value of the "StopID" key
+                var transitID = doc.data().Code; // get value of the "Code" key
+                var imageID = doc.data().ImageCode; // get value of the "ImageCode" key
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
@@ -50,16 +49,14 @@ function displayCards() {
                     //get the user name
                     var transitbookmarks = userDoc.data().transitbookmarks;
                     if (transitbookmarks.includes(imageID)) {
-                        document.getElementById('save-' + imageID).innerText = 'favorite';
+                        document.getElementById('save-' + imageID).innerText = 'favorite'; // if the user has bookmarked this busstop, change the icon to a filled in heart
                     }
                 })
-                document.getElementById("Stops" + "-go-here").appendChild(newcard);
-                //i++;   //if you want to use commented out section
+                document.getElementById("Stops" + "-go-here").appendChild(newcard); // populate card with data
+
             })
         })
 }
-
-
 
 
 $("logoutBtn").click(function () {
@@ -79,7 +76,7 @@ function saveBookmark(imageID) {
         console.log(userDoc.data().name)
     })
     currentUser.set({
-        transitbookmarks: firebase.firestore.FieldValue.arrayUnion(imageID)
+        transitbookmarks: firebase.firestore.FieldValue.arrayUnion(imageID) // save the busstop to the user's document
     }, {
         merge: true
     })
@@ -87,7 +84,7 @@ function saveBookmark(imageID) {
             console.log("bookmark has been saved for: " + currentUser);
             var iconID = 'save-' + imageID;
             console.log(iconID);
-            document.getElementById(iconID).innerText = 'favorite';
+            document.getElementById(iconID).innerText = 'favorite'; // change the icon to a filled in heart
         });
 
 }
