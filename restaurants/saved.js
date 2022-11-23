@@ -61,7 +61,7 @@ function getBookmarks(user) {
                         newcard.querySelector('.card-hours').innerHTML = hours;
                         newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
                         newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: NV01.jpg
-                        document.getElementById(collection + "-go-here").appendChild(newcard);
+                        restaurantCardGroup.appendChild(newcard);
                     } else {
                         console.log("Query has more than one data")
                     }
