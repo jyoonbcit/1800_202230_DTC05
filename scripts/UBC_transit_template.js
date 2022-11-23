@@ -66,8 +66,8 @@ function displayCards() {
                 newcard.querySelector('i').onclick = () => saveBookmark(imageID); //call a function to save the busstop to the user's document 
                 currentUser.get().then(userDoc => {
                     //get the user name
-                    var bookmarks = userDoc.data().bookmarks;
-                    if (bookmarks.includes(imageID)) {
+                    var transitbookmarks = userDoc.data().transitbookmarks;
+                    if (transitbookmarks.includes(imageID)) {
                         document.getElementById('save-' + imageID).innerText = 'favorite';
                     }
                 })
@@ -97,7 +97,7 @@ function saveBookmark(imageID) {
         console.log(userDoc.data().name)
     })
     currentUser.set({
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(imageID)
+        transitbookmarks: firebase.firestore.FieldValue.arrayUnion(imageID)
     }, {
         merge: true
     })
