@@ -26,6 +26,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- Other libraries go here -->
@@ -81,21 +82,13 @@
                 <label>What is the name of the housing?</label>
                 <input type="text" class="form-control" id="name-input" placeholder="Title">
             </div><br>
-            <!-- NOT IMPLEMENTED YET
-
-            <div class="form-group">
-                <label>Upload a .jpg image of the housing.</label><br>
-                <input type="file" id="img-input" name="img" accept="file_extension/jpg, image/*">
-            </div><br>
-
-            -->
             <div class="form-group">
                 <label>What is the price/price range? Write in the format $X[ - $Y]</label>
                 <input type="text" class="form-control" id="price-input" placeholder="Title">
             </div><br>
             <div class="form-group">
                 <label>Write a short sentence about the housing.</label>
-                <input type="text" class="form-control" id="description-input" placeholder="Title"></textarea>
+                <input type="text" class="form-control" id="description-input" placeholder="Title">
             </div><br>
             <div class="form-group">
                 <label>What is the housing type?</label>
@@ -109,9 +102,16 @@
                 <label>Write a detailed description (link to online listing, any other important details)</label>
                 <textarea class="form-control" id="detailed-description-input" rows="3"></textarea>
             </div><br>
+            <div class="form-group">
+                <label style="display:block">Upload an image of the housing.</label>
+                <input type="file" class="form-control" id="image-input" style="width:auto;display:inline;"
+                    accept="image/*">
+                <img id="image-input-goes-here" style="display:block">
+            </div><br>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-lg btn-primary pull-right" onclick="writeListing()">Submit</button>
+                <button type="button" class="btn btn-lg btn-primary pull-right"
+                    onclick="writeListing();uploadImage()">Submit</button>
             </div>
         </form>
 
