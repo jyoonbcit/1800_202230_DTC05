@@ -17,6 +17,28 @@ var firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+var currentUser;
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        var email = user.email;
+        console.log(email, "is signed in");
+        currentUser = db.collection("users").doc(user.uid);
+        displayCards()
+        // console.log(currentUser);
+
+        $("#loginBtn").hide();
+        // ...
+    } else {
+        console.log("No user is signed in");
+        $("#logoutBtn").hide();
+        // User is signed out
+        // ...
+    }
+});
+
 function displayCards() {
     let cardTemplate = document.getElementById("transitCardTemplate");
     let params = new URL(window.location.href);
@@ -32,7 +54,7 @@ function displayCards() {
                 var LocationName = doc.data().LocationName;   // get value of the "LocationName" key
                 var stop = doc.data().StopID;
                 var transitID = doc.data().Code;
-                var imageID = doc.data().ImageCode;
+                var imageID = doc.data().ImageCode; // unique id
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
@@ -55,25 +77,8 @@ function displayCards() {
         })
 }
 
-displayCards("Stops");
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        var email = user.email;
-        console.log(email, "is signed in");
-        currentUser = db.collection("users").doc(user.uid);
-        console.log(currentUser);
-        $("#loginBtn").hide();
-        // ...
-    } else {
-        console.log("No user is signed in");
-        $("#logoutBtn").hide();
-        // User is signed out
-        // ...
-    }
-});
+
 
 $("logoutBtn").click(function () {
     firebase.auth().signOut().then(function () {
@@ -86,6 +91,11 @@ $("logoutBtn").click(function () {
 });
 
 function saveBookmark(imageID) {
+    console.log(imageID);
+    console.log(currentUser)
+    currentUser.get().then(userDoc => {
+        console.log(userDoc.data().name)
+    })
     currentUser.set({
         bookmarks: firebase.firestore.FieldValue.arrayUnion(imageID)
     }, {
@@ -97,4 +107,5 @@ function saveBookmark(imageID) {
             console.log(iconID);
             document.getElementById(iconID).innerText = 'favorite';
         });
+
 }
