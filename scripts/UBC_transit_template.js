@@ -22,10 +22,10 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function displayCards() {
-    let cardTemplate = document.getElementById("transitCardTemplate");
-    let params = new URL(window.location.href);
-    let transitCode = params.searchParams.get("id");
-    let transitTitle = params.searchParams.get("title");
+    let cardTemplate = document.getElementById("transitCardTemplate"); // get the template
+    let params = new URL(window.location.href); // get the URL parameters
+    let transitCode = params.searchParams.get("id"); // get the busstop code from the URL
+    let transitTitle = params.searchParams.get("title"); // get the busstop title from the URL
     db.collection("Stops").where("Code", "==", transitCode).get() // in Stops collection grab all docuuments where Code is equal to transitCode
         .then(allStops => {
             stops = allStops.docs;
@@ -39,10 +39,10 @@ function displayCards() {
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-LocationName').innerHTML = LocationName;
-                newcard.querySelector('.card-stop').innerHTML = stop;
-                newcard.querySelector('.card-image').src = `../images/ubc_transit/${imageID}.jpeg`; //Example: NV01.jpg
+                newcard.querySelector('.card-title').innerHTML = title; // set the title of the card to the BusIDs
+                newcard.querySelector('.card-LocationName').innerHTML = LocationName;  // set the LocationName of the card to the LocationName
+                newcard.querySelector('.card-stop').innerHTML = stop; // set the stop of the card to the StopID
+                newcard.querySelector('.card-image').src = `../images/ubc_transit/${imageID}.jpeg`; //Example: UBC01.jpg
                 newcard.querySelector('i').id = 'save-' + imageID;  //know which busstop to bookmark based on which busstop was clicked
                 newcard.querySelector('i').onclick = () => saveBookmark(imageID); //call a function to save the busstop to the user's document 
                 currentUser.get().then(userDoc => {

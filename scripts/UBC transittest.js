@@ -29,11 +29,11 @@ function displayCards(collection) {
                 var transitID = doc.data().Code; // get value of the "Code" key
                 let newcard = cardTemplate.content.cloneNode(true);
                 //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-RouteHour').innerHTML = RouteHour;
-                newcard.querySelector('.card-stop').innerHTML = stop;
-                newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: NV01.jpg
-                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID;
+                newcard.querySelector('.card-title').innerHTML = title; // set the title of the card to the BusIDs
+                newcard.querySelector('.card-RouteHour').innerHTML = RouteHour; // set the RouteHour of the card to the RouteHour
+                newcard.querySelector('.card-stop').innerHTML = stop; // set the stop of the card to the StopIDs
+                newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: UBC01.jpg
+                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID; // set the href of the detail button to the Code
                 //give unique ids to all elements for future use
                 document.getElementById(collection + "-go-here").appendChild(newcard); // populate card with data
             })
