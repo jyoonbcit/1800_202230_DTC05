@@ -18,7 +18,6 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // Add listing
-
 function writeListing() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
