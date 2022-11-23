@@ -40,13 +40,15 @@ function displayCards() {
                 newcard.querySelector('.card-LocationName').innerHTML = LocationName;
                 newcard.querySelector('.card-stop').innerHTML = stop;
                 newcard.querySelector('.card-image').src = `../images/ubc_transit/${imageID}.jpeg`; //Example: NV01.jpg
-
-                //give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-                //attach to gallery
+                newcard.querySelector('i').id = 'save-' + imageID;  //know which busstop to bookmark based on which busstop was clicked
+                newcard.querySelector('i').onclick = () => saveBookmark(imageID); //call a function to save the busstop to the user's document 
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(imageID)) {
+                        document.getElementById('save-' + imageID).innerText = 'favorite';
+                    }
+                })
                 document.getElementById("Stops" + "-go-here").appendChild(newcard);
                 //i++;   //if you want to use commented out section
             })
@@ -61,6 +63,8 @@ firebase.auth().onAuthStateChanged((user) => {
         // https://firebase.google.com/docs/reference/js/firebase.User
         var email = user.email;
         console.log(email, "is signed in");
+        currentUser = db.collection("users").doc(user.uid);
+        console.log(currentUser);
         $("#loginBtn").hide();
         // ...
     } else {
@@ -80,3 +84,17 @@ $("logoutBtn").click(function () {
         console.log("Error signing out");
     });
 });
+
+function saveBookmark(imageID) {
+    currentUser.set({
+        bookmarks: firebase.firestore.FieldValue.arrayUnion(imageID)
+    }, {
+        merge: true
+    })
+        .then(function () {
+            console.log("bookmark has been saved for: " + currentUser);
+            var iconID = 'save-' + imageID;
+            console.log(iconID);
+            document.getElementById(iconID).innerText = 'favorite';
+        });
+}
