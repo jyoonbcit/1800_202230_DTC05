@@ -6,6 +6,7 @@ firebase.auth().onAuthStateChanged((user) => {
         var email = user.email;
         console.log(email, "is signed in");
         $("#loginBtn").hide();
+        $("#logoutBtn").click(logout);
         // ...
     } else {
         console.log("No user is signed in");
@@ -15,12 +16,11 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-$("logoutBtn").click(function () {
-    firebase.auth().signOut().then(function () {
+function logout() {
+    console.log("logout");
+    firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        console.log("User signed out");
-    }).catch(function (error) {
+    }).catch((error) => {
         // An error happened.
-        console.log("Error signing out");
     });
-});
+}

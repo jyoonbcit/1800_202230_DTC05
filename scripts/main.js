@@ -15,6 +15,7 @@ function insertName() {
             //method #2:  insert using jquery
             $("#name-goes-here").text(user_Name); //using jquery
             $("#loginBtn").hide();
+            $("#logoutBtn").click(logout);
 
         } else {
             // No user is signed in.
@@ -25,12 +26,11 @@ function insertName() {
 }
 insertName(); //run the function
 
-$("logoutBtn").click(function () {
-    firebase.auth().signOut().then(function () {
+function logout() {
+    console.log("logout");
+    firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        console.log("User signed out");
-    }).catch(function (error) {
+    }).catch((error) => {
         // An error happened.
-        console.log("Error signing out");
     });
-});
+}

@@ -109,6 +109,7 @@ function checklogin() {
                     }
                 })
             $("#loginBtn").hide();
+            $("#logoutBtn").click(logout);
         } else {
             // No user is signed in.
             console.log("No user is signed in");
@@ -117,12 +118,11 @@ function checklogin() {
     });
 }
 
-$("logoutBtn").click(function () {
-    firebase.auth().signOut().then(function () {
+function logout() {
+    console.log("logout");
+    firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        console.log("User signed out");
-    }).catch(function (error) {
+    }).catch((error) => {
         // An error happened.
-        console.log("Error signing out");
     });
-});
+}

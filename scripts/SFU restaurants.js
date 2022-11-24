@@ -51,6 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log(email, "is signed in");
         console.log(currentUser);
         $("#loginBtn").hide();
+        $("#logoutBtn").click(logout);
     } else {
         console.log("No user is signed in");
         $("#logoutBtn").hide();
@@ -59,15 +60,14 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-$("logoutBtn").click(function () {
-    firebase.auth().signOut().then(function () {
+function logout() {
+    console.log("logout");
+    firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        console.log("User signed out");
-    }).catch(function (error) {
+    }).catch((error) => {
         // An error happened.
-        console.log("Error signing out");
     });
-});
+}
 
 function saveBookmark(SFU_restaurantID) {
     currentUser.set({
