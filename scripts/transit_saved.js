@@ -10,6 +10,7 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log(currentUser);
         getBookmarks(user);
         $("#loginBtn").hide();
+        $("#logoutBtn").click(logout);
     } else {
         console.log("No user is signed in");
         $("#logoutBtn").hide();
@@ -56,4 +57,13 @@ function getBookmarks(user) {
 
             });
         })
+}
+
+function logout() {
+    console.log("logout");
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
 }
