@@ -25,6 +25,11 @@
     cursor: pointer;
 }
 
+.nav-item {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1rem;
+}
+
 /* small */
 @media screen and (max-width: 600px) {
     body {

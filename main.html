@@ -57,8 +57,45 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/Cocost_logo.png" height="100">
+                <a href="login.html"> <button id="loginBtn" style="float: right">Login/Signup</button> </a>
+                <a href="login.html"> <button id="logoutBtn" style="float: right">Logout</button> </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./transit/transit_saved_page.html">Transit Bookmark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./restaurants/saved.html">Restaurant Bookmark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        id="mySearch">
+                    <button class="btn btn-outline-success" type="submit" onclick="displayHikes()">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="logo" src="./images/Cocost_logo.png" height="125">
@@ -73,6 +110,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="profile.html">Profile</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./transit/transit_saved_page.html">Transit
+                            Bookmark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./restaurants/saved.html">Restaurant
+                            Bookmark</a>
+                    </li>
                 </ul>
                 <form class="d-flex" style="width: 100%;">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -82,7 +127,7 @@
                 <a href="login.html"> <button id="logoutBtn" style="margin-left: 20px;">Logout</button> </a>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <!--Welcome banner-->
     <div class="jumbotron jumbotron-fluid bg-info">
