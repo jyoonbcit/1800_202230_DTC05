@@ -47,8 +47,9 @@
 
 /* medium */
 @media screen and (max-width: 900px) {
-    #logo {
-        display: none;
+    .navbar-brand {
+        max-width: 100%;
+        max-height: auto;
     }
 
     .card {
