@@ -1,9 +1,11 @@
 
-// populate restaurant cards
+// populate restaurant cards on the page
 function displayCards(collection) {
     let cardTemplate = document.getElementById("restaurantsCardTemplate"); // grab restaurantsCardTemplate from html
 
     db.collection(collection)
+        .orderBy("name") // ordered by restaurant name
+        .limit(5) // showing only 5 restaurants on the page
         .get()
         .then(snap => {
             snap.forEach(doc => { //iterate through each doc
@@ -22,6 +24,7 @@ function displayCards(collection) {
                 newcard.querySelector('i').id = 'save-' + SFU_restaurantID;  //know which restaurant to bookmark based on which restaurant was clicked
                 newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document
                 newcard.querySelector('.read-more').href = "eachRestaurant.html?restaurantName=" + title + "&id=" + SFU_restaurantID; // set each restaurant address based on name and its ID
+                // keep the bookmarked item showing filled-icon every time the SFU_restaurant.html page is refreshed
                 currentUser.get().then(userDoc => {
                     //get the user name
                     var restaurant_bookmarks = userDoc.data().restaurant_bookmarks;
@@ -36,6 +39,7 @@ function displayCards(collection) {
 
 displayCards("SFU restaurants");
 
+// set restaurant data into locals storage
 function setSFURestaurantData(id) {
     localStorage.setItem('SFU_restaurantID', id);
 }
@@ -45,15 +49,15 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
-        currentUser = db.collection("users").doc(user.uid)
-        var email = user.email;
+        currentUser = db.collection("users").doc(user.uid) // recognize current user by the unique uid
+        var email = user.email; //grab email in user doc as variable email
         console.log(email, "is signed in");
         console.log(currentUser);
-        $("#loginBtn").hide();
-        $("#logoutBtn").click(logout);
+        $("#loginBtn").hide(); // hide loginBtn when user is signed in
+        $("#logoutBtn").click(logout); //when logoutBtn is clicked, call function logout
     } else {
         console.log("No user is signed in");
-        $("#logoutBtn").hide();
+        $("#logoutBtn").hide(); // if no user is signed in, hide logoutBtn
         // User is signed out
         // ...
     }
@@ -69,15 +73,16 @@ function logout() {
     });
 }
 
+// save bookmark for clicked restaurant by setting saved bookmarks under user doc in firebase console
 function saveBookmark(SFU_restaurantID) {
     currentUser.set({
         restaurant_bookmarks: firebase.firestore.FieldValue.arrayUnion(SFU_restaurantID)
     }, {
         merge: true
-    })
+    }) // update bookmark with SFU restaurant code in firebase console
         .then(function () {
             console.log("bookmark has been saved for: " + currentUser);
             var iconID = 'save-' + SFU_restaurantID;
-            document.getElementById(iconID).innerText = 'favorite';
+            document.getElementById(iconID).innerText = 'favorite'; // change icon from favorite_border to favorite for bookmarked restaurants
         });
 }
