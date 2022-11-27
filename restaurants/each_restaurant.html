@@ -76,50 +76,44 @@
         <p>Go back</p>
     </div>
     <br>
-    <br>
     <main role="main">
+
+        <!-- the body of your page goes here -->
         <div class="container">
+            <h2>Reviews for <span id="RestaurantName"> this restaurant</span></h2>
+            <div id="details-go-here"></div>
             <!-- Here is container for cards  -->
             <div class="container">
-                <div id="SFU restaurants-go-here" class="row row-cols-auto">
+                <div id="CardGroup" class="row row-cols-auto">
                 </div>
             </div>
         </div>
 
-        <!-- Templates for general use, not displayed -->
-        <template id="restaurantsCardTemplate">
-            <div class="card py-2 mx-2" style="width: 30rem;">
-                <img class="card-image card-img-top" src=" ..." alt="...">
+        <template id="CardTemplate">
+            <div class="card">
+                <img class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-location">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <p class="card-hours">Some quick example text to build on the card
-                        title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary card-href" href="./restaurants_review_SFU.html" id="write-review">Write a
-                        review</a>
-                    <a class="btn btn-primary read-more">Read more reviews</a>
-                    <div class=" favorite_button"><span class="saved_text"></span><i
-                            class="material-icons">favorite_border</i>
-                    </div>
+                    <h5 class="title">placeholder</h5>
+                    <p class="rating">placeholder</p>
+                    <br>
+                    <p class="description">This card has supporting text below as a natural lead-in to additional
+                        content.
+                    </p>
                 </div>
             </div>
         </template>
-    </main>
 
-    <!--Copyright Footer-->
-    <footer class="border-top">
-        <p class="text-center">&copy; 2022 DTC05 co.Cost</p>
-    </footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+        <!--Copyright Footer-->
+        <footer class="border-top">
+            <p class="text-center">&copy; 2022 DTC05 co.Cost</p>
+        </footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
-    <script src="../scripts/firebaseAPI_TEAMDTC05.js"></script>
-    <script src="../scripts/SFU restaurants.js"></script>
+        <!-- Link to scripts of your own -->
+        <script src="../scripts/firebaseAPI_TEAMDTC05.js"></script>
+        <script src="../scripts/each_restaurant.js"></script>
 </body>
 
 </html>

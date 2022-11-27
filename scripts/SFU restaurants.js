@@ -1,13 +1,12 @@
 
-
+// populate restaurant cards
 function displayCards(collection) {
-    let cardTemplate = document.getElementById("restaurantsCardTemplate");
+    let cardTemplate = document.getElementById("restaurantsCardTemplate"); // grab restaurantsCardTemplate from html
 
     db.collection(collection)
         .get()
         .then(snap => {
-            //var i = 1;  //if you want to use commented out section
-            snap.forEach(doc => { //iterate thru each doc
+            snap.forEach(doc => { //iterate through each doc
                 var title = doc.data().name;        // get value of the "name" key
                 var location = doc.data().location;   // get value of the "location" key
                 var hours = doc.data().hours;       // get value of the "hours" key
@@ -15,13 +14,14 @@ function displayCards(collection) {
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-location').innerHTML = location;
-                newcard.querySelector('.card-hours').innerHTML = hours;
+                newcard.querySelector('.card-title').innerHTML = title; // restaurant name as title
+                newcard.querySelector('.card-location').innerHTML = location; // restaurant location
+                newcard.querySelector('.card-hours').innerHTML = hours; // restaurant hours
                 newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
-                newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: NV01.jpg
+                newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: SFU01.jpeg
                 newcard.querySelector('i').id = 'save-' + SFU_restaurantID;  //know which restaurant to bookmark based on which restaurant was clicked
-                newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document 
+                newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document
+                newcard.querySelector('.read-more').href = "eachRestaurant.html?restaurantName=" + title + "&id=" + SFU_restaurantID; // set each restaurant address based on name and its ID
                 currentUser.get().then(userDoc => {
                     //get the user name
                     var restaurant_bookmarks = userDoc.data().restaurant_bookmarks;
@@ -30,7 +30,6 @@ function displayCards(collection) {
                     }
                 })
                 document.getElementById(collection + "-go-here").appendChild(newcard);
-                //i++;   //if you want to use commented out section
             })
         })
 }
@@ -59,6 +58,7 @@ firebase.auth().onAuthStateChanged((user) => {
         // ...
     }
 });
+
 
 function logout() {
     console.log("logout");
