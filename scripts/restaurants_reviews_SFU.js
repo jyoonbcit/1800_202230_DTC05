@@ -1,26 +1,33 @@
 let restaurantID = localStorage.getItem("SFU_restaurantID");
 
-db.collection("SFU restaurants").where("code", "==", restaurantID)
-    .get()
-    .then(queryRestaurant => {
-        //see how many results you have got from the query
-        size = queryRestaurant.size;
-        console.log(size);
-        // get the documents of query
-        SFU_restaurants = queryRestaurant.docs;
-        if (size = 1) {
-            var thisRestaurant = SFU_restaurants[0].data();
-            name = thisRestaurant.name;
-            document.getElementById("RestaurantName").innerHTML = name;
-            console.log("size =1")
-        } else {
-            console.log("Query has more than one data")
-        }
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
+// use the restaurantID to read the name of the restaurant from the Firestore and insert the name in the desired place
+function getRestaurantName(restaurantCode) {
+    db.collection("SFU restaurants").where("code", "==", restaurantID)
+        .get()
+        .then(queryRestaurant => {
+            //see how many results you have got from the query
+            size = queryRestaurant.size;
+            console.log(size);
+            // get the documents of query
+            SFU_restaurants = queryRestaurant.docs;
+            // if only 1 result matches
+            if (size = 1) {
+                var thisRestaurant = SFU_restaurants[0].data(); // access data for this restaurant
+                name = thisRestaurant.name; // pass value to variable name
+                document.getElementById("RestaurantName").innerHTML = name; // Change RestaurantName to variable name
+                console.log("size =1")
+            } else {
+                // error
+                console.log("Query has more than one data")
+            }
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+}
+getRestaurantName(restaurantID);
 
+// write into Firestore Database upon submitting the review form
 function writeReview() {
     console.log("Inside Review")
     let Title = document.getElementById("title").value;
@@ -44,7 +51,7 @@ function writeReview() {
                         description: Description,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        window.location.href = "./thanks.html"; //new line added
+                        window.location.href = "./thanks.html";
                     })
                 })
 
@@ -58,8 +65,7 @@ function writeReview() {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        var email = user.email;
+        var email = user.email; //grab email in user doc as variable email
         console.log(email, "is signed in");
         $("#loginBtn").hide();
         $("#logoutBtn").click(logout);

@@ -39,7 +39,7 @@ function displayCards(collection) {
 
 displayCards("SFU restaurants");
 
-// set restaurant data into locals storage
+// save the SFU_restaurant id in your browser's local storage
 function setSFURestaurantData(id) {
     localStorage.setItem('SFU_restaurantID', id);
 }

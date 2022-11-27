@@ -3,7 +3,6 @@ var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
         currentUser = db.collection("users").doc(user.uid)
         var email = user.email;
         console.log(email, "is signed in");
@@ -18,6 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
         // ...
     }
 });
+
 
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
@@ -44,11 +44,11 @@ function getBookmarks(user) {
                         let newcard = cardTemplate.content.cloneNode(true);
 
                         //update title and text and image
-                        newcard.querySelector('.card-title').innerHTML = title;
-                        newcard.querySelector('.card-location').innerHTML = location;
-                        newcard.querySelector('.card-hours').innerHTML = hours;
-                        newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
-                        newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: NV01.jpg
+                        newcard.querySelector('.card-title').innerHTML = title; // put value of title in '.card-title'
+                        newcard.querySelector('.card-location').innerHTML = location; // put value of location in '.card-location'
+                        newcard.querySelector('.card-hours').innerHTML = hours; // put value of hours in '.card-hours'
+                        newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID); // call function setSFURestaurantData when clicked
+                        newcard.querySelector('.card-image').src = `../images/sfu_restaurants/${SFU_restaurantID}.jpeg`; //Example: SFU01.jpeg
                         restaurantCardGroup.appendChild(newcard);
                     } else {
                         console.log("Query has more than one data")
