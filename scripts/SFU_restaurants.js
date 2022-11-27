@@ -20,7 +20,7 @@ function displayCards(collection) {
                 newcard.querySelector('.card-location').innerHTML = location; // restaurant location
                 newcard.querySelector('.card-hours').innerHTML = hours; // restaurant hours
                 newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID);
-                newcard.querySelector('.card-image').src = `../images/${SFU_restaurantID}.jpeg`; //Example: SFU01.jpeg
+                newcard.querySelector('.card-image').src = `../images/sfu_restaurants/${SFU_restaurantID}.jpeg`; //Example: SFU01.jpeg
                 newcard.querySelector('i').id = 'save-' + SFU_restaurantID;  //know which restaurant to bookmark based on which restaurant was clicked
                 newcard.querySelector('i').onclick = () => saveBookmark(SFU_restaurantID); //call a function to save the restaurants to the user's document
                 newcard.querySelector('.read-more').href = "eachRestaurant.html?restaurantName=" + title + "&id=" + SFU_restaurantID; // set each restaurant address based on name and its ID
