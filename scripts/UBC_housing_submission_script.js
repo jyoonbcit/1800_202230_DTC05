@@ -1,9 +1,15 @@
-
+// initialize global variables
 var storage = firebase.storage();
 var currentDoc;
 
-// file upload listen event
-var ImageFile;   //global variable pointing to the picked file
+var imageName = "";
+var housingName = "";
+var price = "";
+var description = "";
+var type = "";
+var detailed_description = "";
+var ImageFile = "";
+
 
 function nextStep() {
     window.location.href = "./jump_page_UBC_housing.html";
@@ -31,7 +37,6 @@ imageUploadListener();
 function uploadImage() {
     // on login
     firebase.auth().onAuthStateChanged(function (user) {
-        var housingName = document.getElementById("name-input").value;
         var storageRef = storage.ref("images/" + `${housingName}` + ".jpg");
 
         storageRef.put(ImageFile)
@@ -53,29 +58,38 @@ function writeListing() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid)
-            var userID = user.uid;
-            //get the document for current user.
+            // var userID = user.uid;
+            // get the document for current user.
             currentUser.get()
                 .then(userDoc => {
-                    var userEmail = userDoc.data().email;
-                    var housingName = document.getElementById("name-input").value;
-                    let price = document.getElementById("price-input").value;
-                    let description = document.getElementById("description-input").value;
-                    let type = document.getElementById("type-input").value;
-                    let detailed_description = document.getElementById("detailed-description-input").value;
+                    // var userEmail = userDoc.data().email;
+                    housingName = document.getElementById("name-input").value;
+                    price = document.getElementById("price-input").value;
+                    description = document.getElementById("description-input").value;
+                    type = document.getElementById("type-input").value;
+                    detailed_description = document.getElementById("detailed-description-input").value;
+                    imageName = document.getElementById("image-input").value;
 
-                    currentDoc = db.collection("UBC Vancouver Housing").add({
-                        name: housingName,
-                        price: price,
-                        description: description,
-                        type: type,
-                        detailed_description: detailed_description,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                    }).then(function (docRef) {
-                        currentDoc = docRef.id;
-                        console.log(currentDoc, "in writeListing");
-                        uploadImage();
-                    })
+                    // if all fields are filled, add the cards
+                    if ((imageName.length != 0) && (housingName.length != 0) && (price.length != 0) && (description.length != 0)
+                        && (detailed_description.length != 0)) {
+
+                        currentDoc = db.collection("UBC Vancouver Housing").add({
+                            name: housingName,
+                            price: price,
+                            description: description,
+                            type: type,
+                            detailed_description: detailed_description,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                        }).then(function (docRef) {
+                            currentDoc = docRef.id;
+                            console.log(currentDoc, "in writeListing");
+                            uploadImage();
+                        })
+
+                    } else {
+                        alert("Fill out all the fields!")
+                    }
                 })
         } else {
             // No user is signed in.

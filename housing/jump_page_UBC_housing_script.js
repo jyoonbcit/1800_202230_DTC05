@@ -1,20 +1,6 @@
 
 // initialize housing database for UBC Vancouver
 
-// old script
-/* function load() {
-    db.collection("UBC Vancouver Housing").get().then((querySnapshot) => {
-        i = 1;
-        querySnapshot.forEach((doc) => {
-            $(`#image_${i}`).html(`<img src=images/UBCV_housing_${i}.jpg'>`);
-            document.getElementById(`image_${i}`).src = `./images/UBCV_housing_${i}.jpg`;
-            $(`#name_${i}`).html(doc.data().name);
-            $(`#description_${i}`).html(doc.data().description);
-            i++;
-        });
-    });
-} */
-
 function displayCards(collection) {
     let cardTemplate = document.getElementById("housingCardTemplate");
 
