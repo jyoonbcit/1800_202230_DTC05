@@ -34,7 +34,7 @@ function displayCards(collection) {
                 newcard.querySelector('.card-RouteHour').innerHTML = RouteHour; // set the RouteHour of the card to the RouteHour
                 newcard.querySelector('.card-stop').innerHTML = stop; // set the stop of the card to the StopIDs
                 newcard.querySelector('.card-image').src = `../images/ubc_transit/${transitID}.jpeg`; //Example: UBC01.jpg
-                newcard.querySelector('.detailbtn').href = "UBC_transit_template.html?title=" + title + "&id=" + transitID; // set the href of the detail button to the Code
+                newcard.querySelector('.detailbtn').href = "UBC_transit_stop.html?title=" + title + "&id=" + transitID; // set the href of the detail button to the Code
                 //give unique ids to all elements for future use
                 document.getElementById(collection + "-go-here").appendChild(newcard); // populate card with data
             })
