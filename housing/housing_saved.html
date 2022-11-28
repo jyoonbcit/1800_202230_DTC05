@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
+    <title>Favourited Housing</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!------------------------>
@@ -53,7 +53,7 @@
             <a class="navbar-brand" href="../main.html">
                 <img src="../images/Cocost_logo.png" height="100">
             </a>
-            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,11 +70,10 @@
                         <a class="nav-link active" href="../transit/transit_saved_page.html">Transit Bookmark</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../restaurants/restaurants_saved.html">Restaurant
-                            Bookmark</a>
+                        <a class="nav-link active" href="../restaurants/restaurants_saved.html">Restaurant Bookmark</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../housing/housing_saved.html">Housing Bookmark</a>
+                        <a class="nav-link active" href="housing_saved.html">Housing Bookmark</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../profile.html">Profile</a>
@@ -100,58 +99,49 @@
         <p>Go back</p>
     </div>
     <br>
-    <br>
     <main role="main">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Restaurants</h1>
-                <p class="lead text-muted">Find out restaurant information around SFU</p>
-            </div>
-        </section>
+        <!-- the body of your page goes here -->
 
+        <!-- Here is container for cards  -->
         <div class="container">
-            <!-- Here is container for cards  -->
+            <h1>My Favourite Housings</h1>
+            <br>
             <div class="container">
-                <div id="SFU restaurants-go-here" class="row row-cols-auto">
+                <div id="housingCardGroup" class="row row-cols-auto">
                 </div>
             </div>
         </div>
 
-        <!-- Restaurant Templates, not displayed -->
-        <template id="restaurantsCardTemplate">
-            <div class="card py-2 mx-2" style="width: 30rem;">
-                <img class="card-image card-img-top" src=" ..." alt="...">
+        <!-- Templates for general use, not displayed -->
+        <template id="housingCardTemplate">
+            <div class="card py-2 mx-2" style="width: 18rem;">
+                <img class="card-image card-img-top" src=" ..." alt="..." height="50%">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-location">Some quick example text to build on the card title and make up the bulk of
+                    <h5 class="card-name">Card title</h5>
+                    <p class="card-description">Some quick example text to build on the card title and make up the bulk
+                        of
                         the
                         card's content.</p>
-                    <p class="card-hours">Some quick example text to build on the card
-                        title and make up the bulk of the
+                    <p class="card-price">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a class="btn btn-primary card-href" href="./restaurants_review_SFU.html" id="write-review">Write a
-                        review</a>
-                    <a class="btn btn-primary read-more">Read more reviews</a>
-                    <div class=" favorite_button"><span class="saved_text"></span><i
-                            class="material-icons">favorite_border</i>
-                    </div>
+                    <p class="card-type">House</p>
+                    <a class="btn btn-primary card-href">Get Details</a>
                 </div>
             </div>
         </template>
-    </main>
 
-    <!--Copyright Footer-->
-    <footer class="border-top">
-        <p class="text-center">&copy; 2022 DTC05 co.Cost</p>
-    </footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+        <!--Copyright Footer-->
+        <footer class="border-top">
+            <p class="text-center">&copy; 2022 DTC05 co.Cost</p>
+        </footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
-    <script src="../scripts/firebaseAPI_TEAMDTC05.js"></script>
-    <script src="../scripts/SFU_restaurants.js"></script>
+        <!-- Link to scripts of your own -->
+        <script src="../scripts/firebaseAPI_TEAMDTC05.js"></script>
+        <script src="../scripts/housing_saved.js"></script>
 </body>
 
 </html>
