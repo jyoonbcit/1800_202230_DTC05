@@ -7,6 +7,7 @@ firebase.auth().onAuthStateChanged((user) => {
         var email = user.email; //grab email in user doc as variable email
         console.log(email, "is signed in");
         console.log(currentUser);
+        getBookmarks(user);
         $("#loginBtn").hide(); // hide loginBtn when user is signed in
         $("#logoutBtn").click(logout); //when logoutBtn is clicked, call function logout
     } else {
