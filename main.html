@@ -57,7 +57,7 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./images/Cocost_logo.png" height="100">
@@ -84,22 +84,25 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="profile.html">Profile</a>
                     </li>
+                    <br>
                     <li class="nav-item">
-                        <a href="login.html"> <button id="loginBtn" style="float: left">Login/Signup</button> </a>
-                        <a href="login.html"> <button id="logoutBtn" style="float: left">Logout</button> </a>
+                        <a href="login.html"> <button id="loginBtn" class="btn btn-outline-dark"
+                                style="float: left">Login/Signup</button> </a>
+                        <a href="login.html"> <button id="logoutBtn" class="btn btn-outline-dark"
+                                style="float: left">Logout</button> </a>
                     </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                         id="mySearch">
-                    <button class="btn btn-outline-success" type="submit" onclick="displayHikes()">Search</button>
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-    
+
     <!--Welcome banner-->
-    <div class="jumbotron jumbotron-fluid bg-info">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4 text-center" style="padding-top: 2%;">Welcome to co.Cost <span
                     id="name-goes-here"></span></h1>
@@ -108,6 +111,7 @@
     </div>
 
     <!--Cards for body-->
+    <p class="choose_school_text" style="margin-left: 1rem;"> Choose your school to continue</p>
     <div class="card">
         <a href="./jump_page_BCIT.html" style="text-decoration:none;">
             <img src="images/BCIT.jpeg" class="card-img-top" alt="...">
