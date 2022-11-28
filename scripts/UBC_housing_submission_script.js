@@ -71,8 +71,7 @@ function writeListing() {
                     imageName = document.getElementById("image-input").value;
 
                     // if all fields are filled, add the cards
-                    if ((imageName.length != 0) && (housingName.length != 0) && (price.length != 0) && (description.length != 0)
-                        && (detailed_description.length != 0)) {
+                    if ((imageName.length != 0) && (housingName.length != 0) && (price.length != 0) && (description.length != 0)) {
 
                         currentDoc = db.collection("UBC Vancouver Housing").add({
                             name: housingName,

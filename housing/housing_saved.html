@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
+    <title>Favourited Housing</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!------------------------>
@@ -73,7 +73,7 @@
                         <a class="nav-link active" href="../restaurants/restaurants_saved.html">Restaurant Bookmark</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../housing/housing_saved.html">Housing Bookmark</a>
+                        <a class="nav-link active" href="housing_saved.html">Housing Bookmark</a>
                     </li>
                     <br>
                     <li class="nav-item">
@@ -99,27 +99,35 @@
     <main role="main">
 
         <!-- the body of your page goes here -->
-        <div class="container">
-            <h1>My Favorite Bus Stops</h1>
-            <br>
-            <!-- Here is container for cards  -->
-            <div class="container">
-                <div id="transitCardGroup" class="row row-cols-auto">
 
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <h1>My Favourite Housings</h1>
+            <br>
+            <div class="container">
+                <div id="housingCardGroup" class="row row-cols-auto">
                 </div>
             </div>
         </div>
 
         <!-- Templates for general use, not displayed -->
-        <template id="transitCardTemplate">
+        <template id="housingCardTemplate">
             <div class="card py-2 mx-2" style="width: 18rem;">
-                <img class="card-image card-img-top" src=" ..." alt="...">
+                <img class="card-image card-img-top" src=" ..." alt="..." height="50%">
                 <div class="card-body">
-                    <h5 class="card-LocationName">Card title</h5>
-                    <p class="card-title">Some quick example text to build on the card title and make up the bulk
-                        of the card's content.</p>
-                    <p class="card-stop">Some quick example text to build on the card title and make up the bulk of the
+                    <h5 class="card-name">Card title</h5>
+                    <p class="card-description">Some quick example text to build on the card title and make up the bulk
+                        of
+                        the
                         card's content.</p>
+                    <p class="card-price">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <p class="card-type">House</p>
+                    <p class="card-detailed">Details</p>
+                    <!-- Favourite button -->
+                    <div class="favorite_button"><span class="saved_text"></span><i
+                            class="material-icons">favorite_border</i>
+                    </div>
                 </div>
             </div>
         </template>
@@ -134,7 +142,7 @@
 
         <!-- Link to scripts of your own -->
         <script src="../scripts/firebaseAPI_TEAMDTC05.js"></script>
-        <script src="../scripts/transit_saved.js"></script>
+        <script src="../scripts/housing_saved.js"></script>
 </body>
 
 </html>
