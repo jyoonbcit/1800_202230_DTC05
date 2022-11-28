@@ -23,13 +23,13 @@ function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             console.log(userDoc.data().name)
-            var housing_bookmarks = userDoc.data().housing_bookmarks;
-            console.log(housing_bookmarks);
+            var housingBookmarks = userDoc.data().housingBookmarks;
+            console.log(housingBookmarks);
 
             let cardTemplate = document.getElementById("housingCardTemplate");
-            housing_bookmarks.forEach(housingID => {
+            housingBookmarks.forEach(housingID => {
                 console.log(housingID);
-                db.collection(collection).get().then(function (querySnapshot) {
+                db.collection("UBC Vancouver Housing").where("name", "==", housingID).get().then(function (querySnapshot) {
                     querySnapshot.forEach(doc => {
                         var name = doc.data().name;
                         var price = doc.data().price;
