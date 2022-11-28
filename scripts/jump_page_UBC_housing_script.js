@@ -9,6 +9,7 @@ function displayCards(collection) {
             var name = doc.data().name;
             var price = doc.data().price;
             var description = doc.data().description;
+            var detailed_description = doc.data().detailed_description;
             var type = doc.data().type;
             var docID = doc.id;
             var img = doc.data().imgURL;
@@ -21,6 +22,8 @@ function displayCards(collection) {
             newCard.querySelector('.card-price').innerHTML = price;
             newCard.querySelector('.card-type').innerHTML = type;
             newCard.querySelector('.card-image').src = `${img}`;
+            newCard.querySelector('.card-detailed').innerHTML = detailed_description;
+
             // know which housing to bookmark based on which housing was clicked
             newCard.querySelector('i').id = 'favourite ' + name;
             // call a function to save the housing to the user's document 
