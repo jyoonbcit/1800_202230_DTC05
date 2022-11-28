@@ -1,3 +1,23 @@
+var currentUser;
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        currentUser = db.collection("users").doc(user.uid) // recognize current user by the unique uid
+        var email = user.email; //grab email in user doc as variable email
+        console.log(email, "is signed in");
+        console.log(currentUser);
+        $("#loginBtn").hide(); // hide loginBtn when user is signed in
+        $("#logoutBtn").click(logout); //when logoutBtn is clicked, call function logout
+    } else {
+        console.log("No user is signed in");
+        $("#logoutBtn").hide(); // if no user is signed in, hide logoutBtn
+        // User is signed out
+        // ...
+    }
+});
+
+
 // function to populate reviews for clicked restaurant
 function populateReviews() {
     let restaurantCardTemplate = document.getElementById("CardTemplate");
