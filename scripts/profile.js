@@ -29,9 +29,12 @@ function populateInfo() {
                         document.getElementById("nicknameInput").value = userNickname;
                     }
                 })
+            $("#loginBtn").hide();
+            $("#logoutBtn").click(logout);
         } else {
             // No user is signed in.
             console.log("No user is signed in");
+            $("#logoutBtn").hide();
         }
     });
 }
