@@ -30,7 +30,7 @@ function getBookmarks(user) {
             transitbookmarks.forEach(thisTransitID => {
                 console.log(thisTransitID);
                 db.collection("Stops").where("ImageCode", "==", thisTransitID).get().then(snap => {
-                    size = snap.size;
+                    size = snap.size; // will return the collection size of Stops where Imagecode = thisTransitID
                     queryData = snap.docs;
 
 
@@ -47,7 +47,7 @@ function getBookmarks(user) {
                         newcard.querySelector('.card-title').innerHTML = title;
                         newcard.querySelector('.card-LocationName').innerHTML = LocationName;
                         newcard.querySelector('.card-stop').innerHTML = stop;
-                        newcard.querySelector('.card-image').src = `../images/ubc_transit/${imageID}.jpeg`; //Example: NV01.jpg
+                        newcard.querySelector('.card-image').src = `../images/ubc_transit/${imageID}.jpeg`; //Example: UBC01.jpg
                         transitCardGroup.appendChild(newcard);
                     } else {
                         console.log("Query has more than one data")
