@@ -45,26 +45,47 @@
     <!------------------------------>
 
     <!-- Search bar and logo -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../main.html">
-                <img id="logo" src="../images/Cocost_logo.png" height="125">
+            <a class="navbar-brand" href="#">
+                <img src="../images/Cocost_logo.png" height="100">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./transit/transit_saved_page.html">Transit Bookmark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./restaurants/restaurants_saved.html">Restaurant Bookmark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a href="login.html"> <button id="loginBtn" class="btn btn-outline-dark"
+                                style="float: left">Login/Signup</button> </a>
+                        <a href="login.html"> <button id="logoutBtn" class="btn btn-outline-dark"
+                                style="float: left">Logout</button>
+                        </a>
+                    </li>
                 </ul>
-                <form class="d-flex" style="width: 100%;">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        id="mySearch">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
-                <a href="../login.html"> <button id="loginBtn" style="margin-left: 20px;">Login/Signup</button> </a>
-                <a href="../login.html"> <button id="logoutBtn" style="margin-left: 20px;">Logout</button> </a>
             </div>
         </div>
     </nav>
@@ -79,21 +100,6 @@
             <div class="container">
                 <h1 class="jumbotron-heading">Transit</h1>
                 <p class="lead text-muted">Find out transit information around UBC</p>
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only"></span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </section>
 
@@ -120,25 +126,7 @@
             </div>
         </template>
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only"></span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+
 
     </main>
 
