@@ -85,7 +85,8 @@
             </div>
         </div>
     </nav>
-    <div id="backContainer" onclick="history.back()" style="float: left">
+    <!-- Back button -->
+    <div id="backContainer" onclick="history.back()" style="float: left; display: block; width: 100%">
         <img id="backBtn" src="../images/backarrow.png">
         <p>Go back</p>
     </div>
@@ -93,7 +94,10 @@
     <main role="main">
         <!-- Submission button -->
         <a href="UBC_housing_submission.html">
-            <button id="addSubmission" style="float: right">Create your own listing</button>
+            <button id="addSubmission" style="width: 100%; margin: auto; padding: auto;" type="button"
+                class="btn btn-primary">Create
+                your own
+                listing</button>
         </a>
 
         <!-- Here is container for cards  -->
@@ -107,7 +111,7 @@
         <!-- Templates for general use, not displayed -->
         <template id="housingCardTemplate">
             <div class="card py-2 mx-2" style="width: 18rem;">
-                <img class="card-image card-img-top" src=" ..." alt="..." height="50%">
+                <img class="card-image card-img-top" width="100%" height="100%" src=" ..." alt="..." height="50%">
                 <div class="card-body">
                     <h5 class="card-name">Card title</h5>
                     <p class="card-description">Some quick example text to build on the card title and make up the bulk
