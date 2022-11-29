@@ -123,16 +123,6 @@ It has the following subfolders and files:
  ┣ 📜UBC_transit_stop.html
  ┗ 📜UBC_transitbus.html              
               
-
-Firebase hosting files: 
-├── .firebaserc
-├── firebase.json
-├── firebase.indexes.json
-├── .firestore.rules
-├── storage.rules
 ```
 
-Tips for file naming files and folders:
 
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
