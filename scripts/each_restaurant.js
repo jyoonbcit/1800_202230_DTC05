@@ -20,8 +20,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 // function to populate reviews for clicked restaurant
 function populateReviews() {
-    let restaurantCardTemplate = document.getElementById("CardTemplate");
-    let restaurantCardGroup = document.getElementById("CardGroup");
+    let restaurantCardTemplate = document.getElementById("CardTemplate");  //access CardTemplate element in each_restaurant.html and assign it to variable restaurantCardTemplate
+    let restaurantCardGroup = document.getElementById("CardGroup"); //access CardGroup element in each_restaurant.html and assign it to variable restaurantCardGroup
     let params = new URL(window.location.href);         //get URL of search bar
     let restaurantCode = params.searchParams.get("id");       //get value for key "id"
     let restaurantName = params.searchParams.get("restaurantName"); //get value for key "restaurantName"
