@@ -145,7 +145,7 @@ It has the following subfolders and files:
 
 ## Contact
 
-* Shuyi Liu - sliu@my.bcit.ca
+* Shuyi Liu - sliu220@my.bcit.ca
 * Justin Oh - doh13@my.bcit.ca
 
 ## Acknowledgements
