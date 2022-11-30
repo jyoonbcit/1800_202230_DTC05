@@ -127,5 +127,12 @@ It has the following subfolders and files:
  ┗ 📜UBC_transitbus.html              
               
 ```
-
+Firebase hosting files: 
+├──📂 .firebase
+┃ ┗ hosting..cache
+├── .firebaserc
+├── firebase.json
+├── firebase.indexes.json
+├── .firestore.rules
+├── storage.rules
 
