@@ -124,10 +124,9 @@ It has the following subfolders and files:
 📦transit                        ### Folder for transit pages
  ┣ 📜transit_saved_page.html
  ┣ 📜UBC_transit_stop.html
- ┗ 📜UBC_transitbus.html              
-              
-```
-Firebase hosting files: 
+ ┗ 📜UBC_transitbus.html      
+ 
+ Firebase hosting files: 
 ├──📂 .firebase
 ┃ ┗ hosting..cache
 ├── .firebaserc
@@ -135,4 +134,7 @@ Firebase hosting files:
 ├── firebase.indexes.json
 ├── .firestore.rules
 ├── storage.rules
+
+              
+```
 
