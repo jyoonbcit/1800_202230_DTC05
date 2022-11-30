@@ -48,7 +48,6 @@ function getBookmarks(user) {
                         newcard.querySelector('.card-title').innerHTML = title; // put value of title in '.card-title'
                         newcard.querySelector('.card-location').innerHTML = `Location:  ${location}`; // put value of location in '.card-location'
                         newcard.querySelector('.card-hours').innerHTML = `Hours:  ${hours}`; // put value of hours in '.card-hours'
-                        // newcard.querySelector('a').onclick = () => setSFURestaurantData(SFU_restaurantID); // call function setSFURestaurantData when clicked
                         newcard.querySelector('.card-image').src = `../images/sfu_restaurants/${SFU_restaurantID}.jpeg`; //Example: SFU01.jpeg
                         restaurantCardGroup.appendChild(newcard);
                     } else {
