@@ -133,7 +133,7 @@ It has the following subfolders and files:
 ├── firebase.indexes.json
 ├── .firestore.rules
 ├── storage.rules
-
+├── 404.html
               
 ```
 
