@@ -123,7 +123,17 @@ It has the following subfolders and files:
 📦transit                        ### Folder for transit pages
  ┣ 📜transit_saved_page.html
  ┣ 📜UBC_transit_stop.html
- ┗ 📜UBC_transitbus.html              
+ ┗ 📜UBC_transitbus.html      
+ 
+ Firebase hosting files: 
+├──📂 .firebase
+┃ ┗ hosting..cache
+├── .firebaserc
+├── firebase.json
+├── firebase.indexes.json
+├── .firestore.rules
+├── storage.rules
+
               
 ```
 
@@ -139,9 +149,3 @@ It has the following subfolders and files:
 
 ## Acknowledgements
 
-* <a href="https://fonts.google.com/">Google Fonts</a>
-* <a href="https://getbootstrap.com/">Bootstrap</a>
-* <a href="https://unsplash.com/">Unsplash</a>
-* <a href="https://www.ubc.ca/">UBC</a>
-* <a href="https://www.sfu.ca/">SFU</a>
-* <a href="https://www.bcit.ca/">BCIT</a>
