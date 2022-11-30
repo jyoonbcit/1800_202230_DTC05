@@ -39,6 +39,7 @@ function getBookmarks(user) {
                         var title = doc.data().name;        // get value of the "name" key
                         var location = doc.data().location;   // get value of the "location" key
                         var hours = doc.data().hours;       // get value of the "hours" key
+                        hours = hours.split("/n").join("<br />"); // replace /n with new line 
                         var SFU_restaurantID = doc.data().code;     // get value of the "code" key
                         console.log(title)
                         let newcard = cardTemplate.content.cloneNode(true);
