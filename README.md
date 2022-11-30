@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## My Web Application co.Cost
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -6,10 +6,10 @@
 
 ## General Info
 
-This browser based web application to ...
+This browser based web application was motivated by the difficulties new students had while looking for housing, restaurants and transit near the university of their choice. We want new students to be able to check the vicinities of their school of choice first before making the final choice to attend said school.
 
 * Hi, my name is Jihoon. I'm excited about this project because I want to learn how to work with others on making a program.
-*  Hi, my name is Shuyi. I'm excited about this project because coding is fun.
+* Hi, my name is Shuyi. I'm excited about this project because coding is fun.
 * Hi, my name is Justin. I'm excited about this project because I want to learn how to code and use git.
 
 ## Technologies
@@ -19,9 +19,12 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
+* Jquery
+* Firebase/Firestore
 * ...
 
-## Content
+
+## Contents
 
 Content of the project folder:
 
