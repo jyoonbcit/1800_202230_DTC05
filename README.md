@@ -149,3 +149,9 @@ It has the following subfolders and files:
 
 ## Acknowledgements
 
+* <a href="https://fonts.google.com/">Google Fonts</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://unsplash.com/">Unsplash</a>
+* <a href="https://www.ubc.ca/">UBC</a>
+* <a href="https://www.sfu.ca/">SFU</a>
+* <a href="https://www.bcit.ca/">BCIT</a>
