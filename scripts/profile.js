@@ -13,7 +13,6 @@ function populateInfo() {
                     //get the data fields of the user
                     let userName = userDoc.data().name;
                     let userSchool = userDoc.data().school;
-                    let userEmail = userDoc.data().email;
                     let userNickname = userDoc.data().nickname;
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -21,9 +20,6 @@ function populateInfo() {
                     }
                     if (userSchool != null) {
                         document.getElementById("schoolInput").value = userSchool;
-                    }
-                    if (userEmail != null) {
-                        document.getElementById("emailInput").value = userEmail;
                     }
                     if (userNickname != null) {
                         document.getElementById("nicknameInput").value = userNickname;
