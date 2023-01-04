@@ -8,7 +8,7 @@
 
 This browser based web application was motivated by the difficulties new students had while looking for housing, restaurants and transit near the university of their choice. We want new students to be able to check the vicinities of their school of choice first before making the final choice to attend said school.
 
-* Hi, my name is Jihoon. I'm excited about this project because I want to learn how to work with others on making a program.
+* Hi, my name is Jihoon. I'm excited about this project because I want to learn how to work with others on making a web application.
 * Hi, my name is Shuyi. I'm excited about this project because coding is fun.
 * Hi, my name is Justin. I'm excited about this project because I want to learn how to code and use git.
 
@@ -147,6 +147,7 @@ It has the following subfolders and files:
 
 * Shuyi Liu - sliu220@my.bcit.ca
 * Justin Oh - doh13@my.bcit.ca
+* Jihoon Yoon - jyoon72@my.bcit.ca
 
 ## Acknowledgements
 
