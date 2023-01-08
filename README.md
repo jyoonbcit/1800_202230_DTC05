@@ -21,7 +21,6 @@ Technologies used for this project:
 * Bootstrap
 * Jquery
 * Firebase/Firestore
-* ...
 
 ## Contents
 
