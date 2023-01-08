@@ -12,7 +12,7 @@ This browser based web application was motivated by the difficulties new student
 * Hi, my name is Shuyi. I'm excited about this project because coding is fun.
 * Hi, my name is Justin. I'm excited about this project because I want to learn how to code and use git.
 
-The website is deployed at this [link](https://bcit-dtc05-project.web.app/)
+The website is deployed at this [link](https://bcit-dtc05-project.web.app/).
 
 ## Technologies
 
